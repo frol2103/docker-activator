@@ -11,4 +11,11 @@ RUN wget http://downloads.typesafe.com/typesafe-activator/${ACTIVATOR_VERSION}/t
     chmod 777 -R /opt/activator && \
     rm typesafe-activator-${ACTIVATOR_VERSION}.zip
 
+RUN mkdir -p /src
+WORKDIR /src
+
+#so activator will put cache file in /var/home
+ENV _JAVA_OPTIONS='-Duser.home=/var/home'
+env PATH /opt/activator/bin/:$PATH
+
 EXPOSE 9000
