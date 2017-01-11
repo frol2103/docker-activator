@@ -1,0 +1,7 @@
+build:
+    stage: build
+    tags:
+      - docker
+    script: 
+      - docker build -t docker.centran.in:5000/$CI_PROJECT_NAME:$CI_BUILD_REF_NAME $CI_BUILD_REF_NAME
+      - docker push docker.centran.in:5000/$CI_PROJECT_NAME:$CI_BUILD_REF_NAME
