@@ -1,6 +1,6 @@
 FROM java:8-jdk
 
-ENV ACTIVATOR_VERSION 1.3.12
+ENV ACTIVATOR_VERSION 1.3.7
 RUN apt-get update && \
     apt-get install -y git build-essential curl wget zip unzip software-properties-common
 
